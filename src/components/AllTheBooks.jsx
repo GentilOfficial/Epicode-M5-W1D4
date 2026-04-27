@@ -1,21 +1,42 @@
-import { Col, Container, Row } from "react-bootstrap"
+import { useState } from "react"
+import { Col, Container, Form, InputGroup, Row } from "react-bootstrap"
 import books from "../data/books/history.json"
-import MyBookCard from "./MyBookCard"
+import EmptyState from "./EmptyState"
+import SingleBook from "./SingleBook"
 
 const AllTheBooks = () => {
+  const [filter, setFilter] = useState("")
+  const filteredBooks = books.filter(({ title }) =>
+    title.toLowerCase().includes(filter),
+  )
+
+  const onFilterInput = (e) => {
+    const input = e.target.value.toLowerCase()
+    setFilter(input)
+  }
+
   return (
     <Container className="my-4">
+      <Row className="mb-4">
+        <Col>
+          <InputGroup>
+            <InputGroup.Text>Search</InputGroup.Text>
+            <Form.Control onInput={onFilterInput} />
+          </InputGroup>
+        </Col>
+      </Row>
       <Row className="g-3">
-        {books.map((book) => (
-          <Col key={book.asin} sm={6} md={4} lg={3}>
-            <MyBookCard
-              img={book.img}
-              title={book.title}
-              category={book.category}
-              price={book.price}
-            />
+        {filteredBooks.length > 0 ? (
+          filteredBooks.map((book) => (
+            <Col key={book.asin} sm={6} md={4} lg={3}>
+              <SingleBook book={book} />
+            </Col>
+          ))
+        ) : (
+          <Col>
+            <EmptyState />
           </Col>
-        ))}
+        )}
       </Row>
     </Container>
   )
