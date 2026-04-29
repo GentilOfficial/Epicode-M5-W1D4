@@ -6,9 +6,9 @@ import SingleBook from "./SingleBook"
 
 const AllTheBooks = () => {
   const [filter, setFilter] = useState("")
-  const filteredBooks = books.filter(({ title }) =>
-    title.toLowerCase().includes(filter),
-  )
+  const filteredBooks = books
+    .filter(({ title }) => title.toLowerCase().includes(filter))
+    .slice(0, 20)
 
   const onFilterInput = (e) => {
     const input = e.target.value.toLowerCase()
@@ -34,7 +34,7 @@ const AllTheBooks = () => {
           ))
         ) : (
           <Col>
-            <EmptyState />
+            <EmptyState message="No books" />
           </Col>
         )}
       </Row>
