@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import AddComment from "./AddComment"
 import CommentsList from "./CommentsList"
 import ErrorState from "./ErrorState"
 import LoadingSpinner from "./LoadingSpinner"
@@ -35,7 +36,14 @@ const CommentArea = ({ asin }) => {
       ) : error !== "" ? (
         <ErrorState error={error} />
       ) : (
-        <CommentsList comments={comments} />
+        <>
+          <AddComment
+            asin={asin}
+            setIsLoading={setIsLoading}
+            setSectionError={setError}
+          />
+          <CommentsList comments={comments} />
+        </>
       )}
     </>
   )
