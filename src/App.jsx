@@ -1,16 +1,11 @@
-import AllTheBooks from "./components/AllTheBooks"
-import MyFooter from "./components/MyFooter"
-import MyNav from "./components/MyNav"
-import Welcome from "./components/Welcome"
+import { ThemeProvider } from "./context/ThemeContext"
+import HomePage from "./pages/HomePage"
 
 const App = () => {
   return (
-    <div>
-      <MyNav />
-      <Welcome />
-      <AllTheBooks />
-      <MyFooter />
-    </div>
+    <ThemeProvider>
+      <HomePage />
+    </ThemeProvider>
   )
 }
 
