@@ -4,16 +4,17 @@ import CommentsList from "./CommentsList"
 import ErrorState from "./ErrorState"
 import LoadingSpinner from "./LoadingSpinner"
 
-const CommentArea = ({ asin }) => {
+const CommentArea = ({ selected }) => {
   const [isLoading, setIsLoading] = useState(false)
   const [comments, setComments] = useState([])
   const [error, setError] = useState("")
 
   const getComments = async () => {
     setIsLoading(true)
+    setError("")
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/books/${asin}/comments`,
+        `https://striveschool-api.herokuapp.com/api/books/${selected}/comments`,
       )
       const data = await response.json()
       setComments(data)
@@ -26,26 +27,33 @@ const CommentArea = ({ asin }) => {
   }
 
   useEffect(() => {
-    getComments()
-  }, [])
+    if (selected) {
+      getComments()
+    } else {
+      setComments([])
+      setError("")
+    }
+  }, [selected])
 
   return (
-    <>
+    <div className={selected && "bg-body-tertiary p-4 rounded border"}>
       {isLoading ? (
         <LoadingSpinner />
       ) : error !== "" ? (
         <ErrorState error={error} />
       ) : (
         <>
-          <AddComment
-            asin={asin}
-            setIsLoading={setIsLoading}
-            setSectionError={setError}
-          />
+          {selected && (
+            <AddComment
+              asin={selected}
+              setIsLoading={setIsLoading}
+              setSectionError={setError}
+            />
+          )}
           <CommentsList comments={comments} />
         </>
       )}
-    </>
+    </div>
   )
 }
 
