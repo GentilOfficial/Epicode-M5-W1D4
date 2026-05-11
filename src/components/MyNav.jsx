@@ -7,12 +7,17 @@ import {
   Navbar,
   Row,
 } from "react-bootstrap"
+import { Link, useLocation } from "react-router-dom"
 import ThemeSwitcher from "./ThemeSwitcher"
 
 const MyNav = ({ setFilter }) => {
+  const { pathname } = useLocation()
+
   const onFilterInput = (e) => {
     const input = e.target.value.toLowerCase()
-    setFilter(input)
+    if (setFilter) {
+      setFilter(input)
+    }
   }
 
   return (
@@ -22,16 +27,24 @@ const MyNav = ({ setFilter }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Browse</Nav.Link>
+            <Nav.Link as={Link} to="/" active={pathname === "/"}>
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" active={pathname === "/about"}>
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/browse" active={pathname === "/browse"}>
+              Browse
+            </Nav.Link>
           </Nav>
           <Row>
             <Col className="d-flex gap-2 align-items-center">
-              <InputGroup>
-                <InputGroup.Text>Search</InputGroup.Text>
-                <Form.Control onInput={onFilterInput} />
-              </InputGroup>
+              {setFilter && (
+                <InputGroup>
+                  <InputGroup.Text>Search</InputGroup.Text>
+                  <Form.Control onInput={onFilterInput} />
+                </InputGroup>
+              )}
               <ThemeSwitcher />
             </Col>
           </Row>

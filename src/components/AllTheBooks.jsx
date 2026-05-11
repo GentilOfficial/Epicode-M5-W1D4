@@ -4,9 +4,10 @@ import EmptyState from "./EmptyState"
 import SingleBook from "./SingleBook"
 
 const AllTheBooks = ({ filter, selected, setSelected }) => {
-  const filteredBooks = books
-    .filter(({ title }) => title.toLowerCase().includes(filter))
-    .slice(0, 20)
+  const filteredBooks = books.filter(
+    ({ title, asin }) =>
+      title.toLowerCase().includes(filter) || asin === selected,
+  )
 
   return (
     <Row className="g-3">

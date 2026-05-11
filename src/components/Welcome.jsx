@@ -1,8 +1,8 @@
-import { Alert, Col, Container, Row } from "react-bootstrap"
+import { Alert, Col, Row } from "react-bootstrap"
 
 const Welcome = () => {
   return (
-    <Container className="my-4">
+    <>
       <Row>
         <Col>
           <h1>EPIBOOKS</h1>
@@ -15,7 +15,7 @@ const Welcome = () => {
           </Alert>
         </Col>
       </Row>
-    </Container>
+    </>
   )
 }
 

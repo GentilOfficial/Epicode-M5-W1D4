@@ -7,9 +7,11 @@ const SingleComment = ({ comment }) => {
   return isDeleted ? null : (
     <ListGroup.Item
       key={comment._id}
-      className="d-flex align-items-center justify-content-between"
+      className="d-flex align-items-center justify-content-between gap-3"
     >
-      {comment.comment} ({comment.rate})
+      <span className="text-truncate">
+        {comment.comment} ({comment.rate})
+      </span>
       <DeleteComment commentId={comment._id} setIsDeleted={setIsDeleted} />
     </ListGroup.Item>
   )

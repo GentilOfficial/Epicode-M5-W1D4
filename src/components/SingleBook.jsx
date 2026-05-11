@@ -1,4 +1,5 @@
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 const MyBookCard = ({ book, selected, setSelected }) => {
   const { asin, img, title, category, price } = book
@@ -14,7 +15,10 @@ const MyBookCard = ({ book, selected, setSelected }) => {
         <Card.Title>{title}</Card.Title>
         <Card.Text>{category}</Card.Text>
       </Card.Body>
-      <Card.Footer>
+      <Card.Footer className="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <Button variant="link" as={Link} to={`/book/${asin}`} className="p-0">
+          details
+        </Button>
         <Card.Text className="h3 text-end">{price}€</Card.Text>
       </Card.Footer>
     </Card>
