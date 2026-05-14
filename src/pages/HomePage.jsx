@@ -1,13 +1,11 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { Col, Row } from "react-bootstrap"
 import AllTheBooks from "../components/AllTheBooks"
 import CommentArea from "../components/CommentArea"
 import PageLayout from "../components/PageLayout"
 import Welcome from "../components/Welcome"
-import { ThemeContext } from "../context/ThemeContext"
 
 const HomePage = () => {
-  const { theme } = useContext(ThemeContext)
   const [filter, setFilter] = useState("")
   const [selected, setSelected] = useState(null)
 

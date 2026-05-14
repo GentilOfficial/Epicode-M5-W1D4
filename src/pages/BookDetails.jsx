@@ -1,14 +1,12 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Col, Image, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import CommentArea from "../components/CommentArea"
 import EmptyState from "../components/EmptyState"
 import PageLayout from "../components/PageLayout"
-import { ThemeContext } from "../context/ThemeContext"
 import books from "../data/books/history.json"
 
 const BookDetails = () => {
-  const { theme } = useContext(ThemeContext)
   const { asin } = useParams()
   const [book, setBook] = useState(null)
 
