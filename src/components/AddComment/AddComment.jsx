@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Alert, Button, Form } from "react-bootstrap"
-import LoadingSpinner from "./LoadingSpinner"
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner"
 
 const AddComment = ({ asin, setSectionError }) => {
   const [form, setForm] = useState({

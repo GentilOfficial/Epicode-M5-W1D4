@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ListGroup } from "react-bootstrap"
-import DeleteComment from "./DeleteComment"
+import DeleteComment from "../DeleteComment/DeleteComment"
 
 const SingleComment = ({ comment }) => {
   const [isDeleted, setIsDeleted] = useState(false)

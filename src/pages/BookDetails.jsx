@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { Col, Image, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import CommentArea from "../components/CommentArea"
-import EmptyState from "../components/EmptyState"
-import PageLayout from "../components/PageLayout"
+import CommentArea from "../components/CommentArea/CommentArea"
+import EmptyState from "../components/EmptyState/EmptyState"
+import PageLayout from "../components/PageLayout/PageLayout"
 import books from "../data/books/history.json"
 
 const BookDetails = () => {

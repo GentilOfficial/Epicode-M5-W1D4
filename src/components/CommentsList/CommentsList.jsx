@@ -1,6 +1,6 @@
 import { ListGroup } from "react-bootstrap"
-import EmptyState from "./EmptyState"
-import SingleComment from "./SingleComment"
+import EmptyState from "../EmptyState/EmptyState"
+import SingleComment from "../SingleComment/SingleComment"
 
 const CommentsList = ({ comments }) => {
   return (

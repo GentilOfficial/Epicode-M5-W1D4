@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import AddComment from "./AddComment"
-import CommentsList from "./CommentsList"
-import ErrorState from "./ErrorState"
-import LoadingSpinner from "./LoadingSpinner"
+import AddComment from "../AddComment/AddComment"
+import CommentsList from "../CommentsList/CommentsList"
+import ErrorState from "../ErrorState/ErrorState"
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner"
 
 const CommentArea = ({ selected }) => {
   const [isLoading, setIsLoading] = useState(false)

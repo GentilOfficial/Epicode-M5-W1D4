@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { Col, Row } from "react-bootstrap"
-import AllTheBooks from "../components/AllTheBooks"
-import CommentArea from "../components/CommentArea"
-import PageLayout from "../components/PageLayout"
-import Welcome from "../components/Welcome"
+import AllTheBooks from "../components/AllTheBooks/AllTheBooks"
+import CommentArea from "../components/CommentArea/CommentArea"
+import PageLayout from "../components/PageLayout/PageLayout"
+import Welcome from "../components/Welcome/Welcome"
 
 const HomePage = () => {
   const [filter, setFilter] = useState("")

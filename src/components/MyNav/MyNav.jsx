@@ -8,7 +8,7 @@ import {
   Row,
 } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
-import ThemeSwitcher from "./ThemeSwitcher"
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
 
 const MyNav = ({ setFilter }) => {
   const { pathname } = useLocation()

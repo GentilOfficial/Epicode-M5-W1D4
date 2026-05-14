@@ -1,7 +1,7 @@
 import { Moon, Sun } from "lucide-react"
 import { useContext } from "react"
 import { Button } from "react-bootstrap"
-import { ThemeContext } from "../context/ThemeContext"
+import { ThemeContext } from "../../context/ThemeContext"
 
 const ThemeSwitcher = () => {
   const { theme, setNewTheme } = useContext(ThemeContext)

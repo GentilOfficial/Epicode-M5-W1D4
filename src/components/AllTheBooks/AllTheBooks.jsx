@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap"
-import books from "../data/books/history.json"
-import EmptyState from "./EmptyState"
-import SingleBook from "./SingleBook"
+import books from "../../data/books/history.json"
+import EmptyState from "../EmptyState/EmptyState"
+import SingleBook from "../SingleBook/SingleBook"
 
 const AllTheBooks = ({ filter, selected, setSelected }) => {
   const filteredBooks = books.filter(

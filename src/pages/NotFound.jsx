@@ -1,6 +1,6 @@
 import { Alert, Col, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import PageLayout from "../components/PageLayout"
+import PageLayout from "../components/PageLayout/PageLayout"
 
 const NotFound = () => {
   return (

@@ -1,8 +1,8 @@
 import { useContext } from "react"
 import { Container } from "react-bootstrap"
-import MyFooter from "../components/MyFooter"
-import MyNav from "../components/MyNav"
-import { ThemeContext } from "../context/ThemeContext"
+import { ThemeContext } from "../../context/ThemeContext"
+import MyFooter from "../MyFooter/MyFooter"
+import MyNav from "../MyNav/MyNav"
 
 const PageLayout = ({ children, setFilter }) => {
   const { theme } = useContext(ThemeContext)
