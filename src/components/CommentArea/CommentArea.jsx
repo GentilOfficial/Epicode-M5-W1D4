@@ -42,7 +42,7 @@ const CommentArea = ({ selected }) => {
       ) : error !== "" ? (
         <ErrorState error={error} />
       ) : (
-        <>
+        <div data-testid="comments-area">
           {selected && (
             <AddComment
               asin={selected}
@@ -51,7 +51,7 @@ const CommentArea = ({ selected }) => {
             />
           )}
           <CommentsList comments={comments} />
-        </>
+        </div>
       )}
     </div>
   )

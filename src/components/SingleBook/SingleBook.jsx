@@ -9,8 +9,12 @@ const MyBookCard = ({ book, selected, setSelected }) => {
   }
 
   return (
-    <Card className={`h-100 ${selected === asin && "border-2 border-danger"}`}>
-      <Card.Img onClick={toggleCardSelection} variant="top" src={img} />
+    <Card
+      className={`h-100 ${selected === asin && "border-2 border-danger"}`}
+      onClick={toggleCardSelection}
+      data-testid="book-card"
+    >
+      <Card.Img variant="top" src={img} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{category}</Card.Text>

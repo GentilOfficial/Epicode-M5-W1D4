@@ -42,7 +42,10 @@ const MyNav = ({ setFilter }) => {
               {setFilter && (
                 <InputGroup>
                   <InputGroup.Text>Search</InputGroup.Text>
-                  <Form.Control onInput={onFilterInput} />
+                  <Form.Control
+                    onInput={onFilterInput}
+                    placeholder="Book title"
+                  />
                 </InputGroup>
               )}
               <ThemeSwitcher />

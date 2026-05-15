@@ -8,6 +8,7 @@ const SingleComment = ({ comment }) => {
     <ListGroup.Item
       key={comment._id}
       className="d-flex align-items-center justify-content-between gap-3"
+      data-testid="single-comment"
     >
       <span className="text-truncate">
         {comment.comment} ({comment.rate})
